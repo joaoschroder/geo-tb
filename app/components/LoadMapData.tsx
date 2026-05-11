@@ -36,7 +36,7 @@ export default function LoadMapData({ onDataLoaded }: Props) {
             const formData = new FormData();
             formData.append("file", file);
 
-            const res = await fetch("/api/process", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_RAILWAY_API_URL}/process`, {
                 method: "POST",
                 body: formData,
             });
