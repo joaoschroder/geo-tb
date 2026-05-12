@@ -345,11 +345,6 @@ export default function SidePanel({ municipioName, municipioCode, notifications 
                                                 }`}>
                                                 Probabilidade: {(prediction.probability * 100).toFixed(1)}%
                                             </p>
-                                            {prediction.features_used && (
-                                                <p className="text-xs mt-1 text-gray-400">
-                                                    {prediction.features_used} variáveis utilizadas na previsão
-                                                </p>
-                                            )}
                                         </div>
                                     )
                                 ) : null}
