@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { SinanTuberculoseRecord } from "../utils/enum";
 
-const RAILWAY_API_URL = process.env.RAILWAY_API_URL || "http://localhost:8000";
+const RAILWAY_API_URL = process.env.NEXT_PUBLIC_RAILWAY_API_URL || "http://localhost:8000";
 
 type PredictionResult = {
     favorable: boolean;
