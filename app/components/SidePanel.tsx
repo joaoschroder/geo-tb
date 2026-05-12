@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { SinanTuberculoseRecord } from "../utils/enum";
 
+const RAILWAY_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
 type PredictionResult = {
     favorable: boolean;
     probability: number;
@@ -172,7 +174,7 @@ export default function SidePanel({ municipioName, municipioCode, notifications 
         setPredicting(true);
         setPrediction(null);
 
-        fetch('/api/predict', {
+        fetch(`${RAILWAY_API_URL}/predict`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(notification)
