@@ -52,9 +52,9 @@ export default function HomeClient() {
         : [];
 
     return (
-        <div className="flex flex-col gap-3" style={{ marginTop: 25, marginLeft: 25 }}>
-            <div className="flex items-center gap-4" style={{ marginBottom: 25 }}>
-                {/* Título do sistema */}
+        <div className="flex flex-col" style={{ height: "100vh", padding: "25px", boxSizing: "border-box", overflow: "hidden" }}>
+            {/* Header row */}
+            <div className="flex items-center gap-4" style={{ marginBottom: 25, flexShrink: 0 }}>
                 <Image
                     src="/geo-tb-logo-transparent.png"
                     alt="GeoTB logo"
@@ -65,8 +65,10 @@ export default function HomeClient() {
                 />
                 <LoadMapData onDataLoaded={onDataLoaded} />
             </div>
-            <div className="flex gap-3 items-start">
-                <div className="flex-1 min-w-0">
+
+            {/* Map + SidePanel row — fills remaining height */}
+            <div className="flex gap-3 items-start" style={{ flex: 1, minHeight: 0 }}>
+                <div style={{ flex: 1, minWidth: 0, height: "100%" }}>
                     <MapViewWrapper counts={counts} onMunicipioClick={handleMunicipioClick} />
                 </div>
                 <SidePanel

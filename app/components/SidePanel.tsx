@@ -189,7 +189,12 @@ export default function SidePanel({ municipioName, municipioCode, notifications 
 
     return (
         <aside
-            style={{ width: 400, minWidth: 400, height: 670, marginRight: 25, padding: 20 }}
+            style={{
+                width: 500,
+                minWidth: 500,
+                height: "100%",
+                padding: 20
+            }}
             className="bg-white border border-gray-200 rounded-2xl flex flex-col overflow-hidden shadow-sm"
         >
             {/* Header */}
